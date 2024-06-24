@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
-struct TodoGotchiApp: App {
+
+struct toDoListApp: App {
+    init()  {
+        FirebaseApp.configure()
+    }
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup{
+            MainView()
         }
     }
 }
+
+
