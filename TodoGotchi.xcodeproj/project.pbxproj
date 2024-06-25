@@ -27,6 +27,8 @@
 		7EA289AA2C27F20E0093F455 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289A92C27F20E0093F455 /* RegisterViewModel.swift */; };
 		7EA289AC2C27F2210093F455 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289AB2C27F2210093F455 /* LoginViewModel.swift */; };
 		7EA289AE2C27F2530093F455 /* ToDoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289AD2C27F2530093F455 /* ToDoListItemView.swift */; };
+		7EA289B02C291E4D0093F455 /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289AF2C291E4D0093F455 /* TLButton.swift */; };
+		7EA289B22C2A2C950093F455 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289B12C2A2C950093F455 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7EA289A92C27F20E0093F455 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		7EA289AB2C27F2210093F455 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7EA289AD2C27F2530093F455 /* ToDoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemView.swift; sourceTree = "<group>"; };
+		7EA289AF2C291E4D0093F455 /* TLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLButton.swift; sourceTree = "<group>"; };
+		7EA289B12C2A2C950093F455 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +114,10 @@
 				7EA289932C27E2C30093F455 /* ToDoListView.swift */,
 				7EA289952C27E2CF0093F455 /* NewItemView.swift */,
 				7EA289972C27E2D80093F455 /* LoginView.swift */,
+				7EA289B12C2A2C950093F455 /* HeaderView.swift */,
 				7EA289992C27E2E30093F455 /* RegisterView.swift */,
 				7EA289AD2C27F2530093F455 /* ToDoListItemView.swift */,
+				7EA289AF2C291E4D0093F455 /* TLButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,7 +240,9 @@
 				7EA289922C27E2B70093F455 /* ProfileView.swift in Sources */,
 				7EA289A62C27F1FB0093F455 /* NewItemViewModel.swift in Sources */,
 				7EA289AC2C27F2210093F455 /* LoginViewModel.swift in Sources */,
+				7EA289B22C2A2C950093F455 /* HeaderView.swift in Sources */,
 				7EA289A42C27F1EC0093F455 /* ToDoListItemViewModel.swift in Sources */,
+				7EA289B02C291E4D0093F455 /* TLButton.swift in Sources */,
 				7EA289AA2C27F20E0093F455 /* RegisterViewModel.swift in Sources */,
 				7EA289A22C27F1DE0093F455 /* ProfileViewModel.swift in Sources */,
 				7E66EBF12C27A4230077E5FA /* toDoListApp.swift in Sources */,

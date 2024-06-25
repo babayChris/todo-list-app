@@ -9,46 +9,46 @@ import SwiftUI
 
 
 struct LoginView: View{
+
+    @StateObject var viewModel = LoginViewModel()
+    
     var body: some View{
-        @State var email = "" // mutable variable set to string
-        @State var password = ""
+        
         
         NavigationView {
             VStack {
                 //Header
-                HeaderView()
+                HeaderView(title: "ToDo List" , subtitle: "Get things done", color: .pink, degree: 15,
+                offset: -100)
                 //Login Form
                 Form{
-                    TextField("Email Addresss", text: $email)
+                    TextField("Email Addresss", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    SecureField("Password", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Button(){
-                        //attempt login
-                        
-                    } label: {
-                        ZStack { RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(Color.blue)
-                            Text("Log In")
-                                .foregroundColor(Color.white)
-                                .bold()
-                        }
-                    }
+                        .textInputAutocapitalization(.none)
+                        .autocorrectionDisabled()
                     
+                    SecureField("Password", text: $viewModel.password)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .textInputAutocapitalization(.none)
+                        .autocorrectionDisabled()
+                    
+                    TLButton(title: "Login", backround: .blue){
+                        viewModel.login()
+                    }
+                    .padding()
                 }
                 //Create account
                 VStack {
                     Text("New around here?")
-                    Button("Create an account."){
-                        //show registration page
-                    }
+                    NavigationLink("Create an account.", destination: RegisterView())
                 }
                 .padding(.bottom, 50)
                 
-                Spacer()
+            
             }
             
         }
+        
     }
 }
 
@@ -59,27 +59,4 @@ struct LoginView_Preview: PreviewProvider{
     
 }
 
-struct HeaderView:View{
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 0)
-                .foregroundColor(Color.pink)
-                .rotationEffect(Angle(degrees: 15))
-            
-            VStack{
-                Text("ToDo - List")
-                    .font(.system(size:50))
-                    .foregroundColor(Color.white)
-                    .bold()
-                
-                Text("Get things done")
-                    .font(.system(size:30))
-                    .foregroundColor(Color.white)
-            }
-            .padding(.top, 30)
-        }
-        .frame(width: UIScreen.main.bounds.width * 3, height: 300)
-        .offset(y: -100)
-        
-    }
-}
+
