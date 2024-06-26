@@ -21,7 +21,14 @@ struct LoginView: View{
                 HeaderView(title: "ToDo List" , subtitle: "Get things done", color: .pink, degree: 15,
                 offset: -100)
                 //Login Form
+                
                 Form{
+                    
+                    if !viewModel.errorMessage.isEmpty {// if the viewModel error message variable is empty then we don't display a message
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(Color.red)
+                    }
+                    
                     TextField("Email Addresss", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .textInputAutocapitalization(.none)

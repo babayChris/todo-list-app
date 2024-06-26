@@ -5,6 +5,7 @@
 //  Created by Christopher Babayan on 6/22/24.
 //
 
+import FirebaseAuth
 import Foundation
 
 class LoginViewModel: ObservableObject{
@@ -16,15 +17,25 @@ class LoginViewModel: ObservableObject{
     init() {}
     
     func login(){
-        guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
-              !password.trimmingCharacters(in: .whitespaces).isEmpty else{
-            return
-            
-        }
+        Auth.auth().signIn(withEmail: email, password: password)
         
     }
     
-    func validate(){
+    private func validate() -> Bool{
+        errorMessage = ""
+        guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
+              !password.trimmingCharacters(in: .whitespaces).isEmpty else{
+            
+            errorMessage = "Please fill out all fields"
+            return false //return is used to exit guard
+            
+        }
         
+        guard email.contains("@") && email.contains(".") else
+        {
+            errorMessage = "Please enter valid email"
+            return false
+        }
+        return true
     }
 }

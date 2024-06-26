@@ -29,6 +29,7 @@
 		7EA289AE2C27F2530093F455 /* ToDoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289AD2C27F2530093F455 /* ToDoListItemView.swift */; };
 		7EA289B02C291E4D0093F455 /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289AF2C291E4D0093F455 /* TLButton.swift */; };
 		7EA289B22C2A2C950093F455 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA289B12C2A2C950093F455 /* HeaderView.swift */; };
+		7ECEF2572C2B9103006ED20A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7ECEF2562C2B9103006ED20A /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA2898A2C27DE6D0093F455 /* FirebaseAnalytics in Frameworks */,
+				7ECEF2572C2B9103006ED20A /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,7 @@
 			children = (
 				7E66EBEF2C27A4230077E5FA /* TodoGotchi */,
 				7E66EBEE2C27A4230077E5FA /* Products */,
+				7ECEF2552C2B9103006ED20A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +157,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		7ECEF2552C2B9103006ED20A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +182,7 @@
 			name = TodoGotchi;
 			packageProductDependencies = (
 				7EA289892C27DE6D0093F455 /* FirebaseAnalytics */,
+				7ECEF2562C2B9103006ED20A /* FirebaseAuth */,
 			);
 			productName = TodoGotchi;
 			productReference = 7E66EBED2C27A4230077E5FA /* TodoGotchi.app */;
@@ -466,6 +477,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7EA289882C27DE6D0093F455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		7ECEF2562C2B9103006ED20A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EA289882C27DE6D0093F455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
