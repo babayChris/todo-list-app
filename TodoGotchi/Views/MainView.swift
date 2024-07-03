@@ -11,17 +11,30 @@ struct MainView: View{
     @StateObject var viewModel = MainViewModel()
     
     var body: some View{
-        NavigationView{
             //use navigation view so we can move views
-            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{//checks for signin
-                ToDoListView()
+        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {//checks for signin
+            accountView
             } else {
-                LoginView()
+                LoginView(offset: -110)
                 //not signed in
             }
-        }
     }
     
+@ViewBuilder
+    var accountView: some View{
+        TabView{//creates tabs on the bottom of the screen
+            
+            ToDoListView(userID: viewModel.currentUserId)
+                .tabItem{
+                    Label("Home", systemImage: "house")
+                }
+            ProfileView()
+                .tabItem{
+                    Label("profile", systemImage: "person.circle")
+                }
+            
+        }
+    }
     
     
     

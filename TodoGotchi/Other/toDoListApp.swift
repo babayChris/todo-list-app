@@ -11,12 +11,16 @@ import FirebaseCore
 @main
 
 struct toDoListApp: App {
-    init()  {
+    
+    init() {
+        print("initializing firebase")
         FirebaseApp.configure()
+        print("firebase configured")
     }
+    
     var body: some Scene {
         WindowGroup{
-            MainView()
+            MainView(viewModel: MainViewModel())
         }
     }
 }

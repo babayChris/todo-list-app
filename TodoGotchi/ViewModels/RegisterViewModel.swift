@@ -23,10 +23,8 @@ class RegisterViewModel: ObservableObject{
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password){
-            [weak self] result, error in // closure, if there is an error, "error" will contain it
-            // if there is a result aka user created, "result" will contain it
-            guard let userID = result?.user.uid else{ // result? is optional used when result may = .nil
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+            guard let userID = result?.user.uid else{
                 return
             }
             self?.insertUserRecord(id: userID)
@@ -34,13 +32,16 @@ class RegisterViewModel: ObservableObject{
         }
         
     }
+    // closure, if there is an error, "error" will contain it
+    // if there is a result aka user created, "result" will contain it
+    // result? is optional used when result may = .nil
     
     
     
     private func insertUserRecord(id: String) {
-        let newUser = User(id: name,
+        let newUser = User(id: id,
+                           name: name,
                            email: email,
-                           password: password,
                            joined: Date().timeIntervalSince1970)
         
         let db = Firestore.firestore()

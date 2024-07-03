@@ -11,6 +11,7 @@ import SwiftUI
 struct LoginView: View{
 
     @StateObject var viewModel = LoginViewModel()
+    var offset: Double
     
     var body: some View{
         
@@ -19,7 +20,7 @@ struct LoginView: View{
             VStack {
                 //Header
                 HeaderView(title: "ToDo List" , subtitle: "Get things done", color: .pink, degree: 15,
-                offset: -100)
+                offset: offset)
                 //Login Form
                 
                 Form{
@@ -61,7 +62,7 @@ struct LoginView: View{
 
 struct LoginView_Preview: PreviewProvider{
     static var previews: some View{
-        LoginView()
+        LoginView(offset: -100)
     }
     
 }
