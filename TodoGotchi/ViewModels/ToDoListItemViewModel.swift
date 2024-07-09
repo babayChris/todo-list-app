@@ -6,7 +6,18 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class ToDoListItemViewModel: ObservableObject{
-    init() {}
+    
+
+    
+    
+    func delete(userID: String, item: String) async {
+        
+        //let db = Firestore.firestore()
+      //  await //db.collection("users").document("\(userID)").collection("todos").document("\(item)").delete()
+}
+    
+    init () {}
 }

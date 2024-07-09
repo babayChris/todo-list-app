@@ -27,12 +27,21 @@ struct NewItemView: View{
                     .datePickerStyle(GraphicalDatePickerStyle())
                 // submit button
                 TLButton(title: "Save", backround: .pink){
-                    viewModel.save()
-                    newItemPresented = false
+                    if viewModel.canSave{
+                        viewModel.save()
+                        newItemPresented = false
+                    } else{
+                        viewModel.showAlert = true
+                    }
+                        
+                        
                 }
                 .padding(.bottom)
             }
-
+            .alert(isPresented: $viewModel.showAlert){
+                Alert(title: Text("Error"),
+                      message:Text("Please input a date that is today or newer."))
+            }
         }
     }
 }

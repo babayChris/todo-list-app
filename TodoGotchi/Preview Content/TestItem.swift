@@ -1,9 +1,11 @@
 //
-//  ToDoListItem.swift
+//  TestItem.swift
 //  TodoGotchi
 //
-//  Created by Christopher Babayan on 6/22/24.
+//  Created by Christopher Babayan on 7/9/24.
 //
+
+import Foundation
 
 import Foundation
 
@@ -19,6 +21,3 @@ struct ToDoListItem: Codable, Identifiable{ //Identifiable - think of it as a la
         
     }
 }
-
-
-
