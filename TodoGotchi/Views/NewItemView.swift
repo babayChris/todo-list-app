@@ -28,9 +28,11 @@ struct NewItemView: View{
                 // submit button
                 TLButton(title: "Save", backround: .pink){
                     if viewModel.canSave{
+                        print("is saving")
                         viewModel.save()
                         newItemPresented = false
                     } else{
+                        print("canSave() is false")
                         viewModel.showAlert = true
                     }
                         

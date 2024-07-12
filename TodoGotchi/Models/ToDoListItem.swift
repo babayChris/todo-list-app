@@ -14,7 +14,7 @@ struct ToDoListItem: Codable, Identifiable{ //Identifiable - think of it as a la
     let createdDate: TimeInterval
     var isDone: Bool
     
-    mutating func setDone(_ state: Bool) { //underscore means to ignore meaning the state can be empty and the code will still run
+    mutating func setDone(_ state: Bool ) { //underscore means to ignore meaning the state can be empty and the code will still run
         isDone = state // when setDone() is called a bool can be passed into it to set var isDone
         
     }

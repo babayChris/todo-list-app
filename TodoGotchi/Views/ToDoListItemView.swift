@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ToDoListItemView: View{
+    
+    @StateObject var viewModel = ToDoListItemViewModel()
     var item: ToDoListItem
     
     var body: some View{
@@ -25,8 +27,10 @@ struct ToDoListItemView: View{
                 
             }
             Spacer()
+            
             Button {
-               //toggle done
+                viewModel.toggleCheck(item: item)
+                print("button hit")
             } label: {
                 Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle" )// if item.isDone returns true then ":" is the else
             }

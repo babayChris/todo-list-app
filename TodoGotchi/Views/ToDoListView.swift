@@ -10,13 +10,15 @@ import SwiftUI
 
 struct ToDoListView: View{
     
-    @StateObject var viewModel = ToDoListViewModel()
-    @FirestoreQuery var items: [ToDoListItem] //items of type [ToDoListItem]
+    @StateObject var viewModel: ToDoListViewModel
+    @FirestoreQuery var items: [ToDoListItem] //FirestoreQuery is listening live to keep code updated at all times
+    //items of type [ToDoListItem]
     private let userID: String
     
     init(userID: String) {
         self.userID = userID
         self._items = FirestoreQuery(collectionPath: "users/\(userID)/todos")
+        self._viewModel = StateObject(wrappedValue: ToDoListViewModel(userID: userID)) //initialize view model as a state object
     }
     var body: some View{
         NavigationView{
@@ -27,7 +29,7 @@ struct ToDoListView: View{
                         .swipeActions{
                             Button{
                                 //delete
-
+                                viewModel.delete(id: items.id)
                             } label: {
                                 Text("Delete")
                                     
