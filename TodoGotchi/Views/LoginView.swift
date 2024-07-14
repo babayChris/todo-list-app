@@ -34,6 +34,7 @@ struct LoginView: View{
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .textInputAutocapitalization(.none)
                         .autocorrectionDisabled()
+                        .textInputAutocapitalization(TextInputAutocapitalization.never)
                     
                     SecureField("Password", text: $viewModel.password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
